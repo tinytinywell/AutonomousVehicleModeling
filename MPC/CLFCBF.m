@@ -86,7 +86,7 @@ gamma = 0.5;
 % Omega * U <= T, with U = [u; ep] 
 Omega = [LgV -1; -Lgh 0];
 T = [-lambda * clf - LfV; gamma * cbf + Lfh];
-% optimization
+%% optimization
 options = optimset('Algorithm', 'active-set');
 % Inequality constraint
 A_ine = Omega;
@@ -101,7 +101,7 @@ lower_bound = [a_min; ep_min];
 upper_bound=[a_max; ep_max];
 ini = zeros(2, 1);
 [acc, ~] = quadprog(H, f', A_ine, b_ine, Aep, Bep, lower_bound, upper_bound, ini, options);
-% just apply the first control command to the vehicle model
+% apply the control command to the vehicle model
 U_1 = acc(1);
 % The quadprog still outputs when the programming is infeasible, so U
 % should be limited so that it won't be out of the boundary
