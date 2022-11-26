@@ -4,7 +4,7 @@ function simulate_and_plot(options)
 arguments
     options.position                       (1, :) double = [40, 20];  % e.g. vehicle 1 starts at 40 m, vehicle 2 at 20 m 
     options.speed                          (1, :) double = [20, 25];  % e.g. vehicle 1 starts at 20 m/s, vehicle 2 at 25 m/s 
-    options.leader_config                  (1, :) double = [10, 0];   % vehicle 1's reference speed is 10 m/s, it has a extra 0 amplitude sine-wave acceleration by default 
+    options.leader_config                  (1, :) double = [10, 0];   % vehicle 1's reference speed is 10 m/s, it has a extra 0 amplitude sine-wave speed disturbance by default 
     options.controller                     (1, 1) string = 'MathWorksMPC'; % default controller is 'MathWorks MPC', the other options are:
                                                                            % Custom MPC: 'MPC_quadprog', 'MPC_quadprog_wKalman', 'MPC_fmincon', 'MPC_fmincon_wKalman';
                                                                            % PID: 'PID'   
